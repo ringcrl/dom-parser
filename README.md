@@ -1,11 +1,18 @@
 # dom-parser
 
-使用正则实现一个不依赖于浏览器环境的 dom-parse，实现一部分 [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) 的特性。
+使用正则实现一个不依赖于浏览器环境的 DOMParse，实现一部分 [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) 的特性。
 
 # TDD
 
 ```sh
 yarn test
+```
+
+# 使用
+
+```js
+const parser = new DOMParse();
+parser.parseFromString('<div></div>')
 ```
 
 # API
