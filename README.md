@@ -1,61 +1,43 @@
 # dom-parser
 
-Fast dom parser based on regexps
+使用正则实现一个不依赖于浏览器环境的 dom-parse，实现一部分 [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) 的特性。
 
-## installation
+# TDD
 
-    npm install dom-parser
+```sh
+yarn test
+```
 
-## usage
+# API
 
-    var DomParser = require('dom-parser');
-    var parser = new DomParser();
+## Dom
 
-    fs.readFile('htmlToParse.html', 'utf8', function(err, html){
-      if (!err){
-        var dom = parser.parseFromString(html);
+实现方法：
 
-        console.log(dom.getElementById('myElement').innerHTML);
-      }
-    })
+- getElementById
+- getElementsByClassName
+- getElementsByTagName
+- getElementsByName
 
-## API
+## Node
 
-##### Dom
+实现属性：
 
-Implemented methods:
+- nodeType
+- nodeName
+- childNodes
+- firstChild
+- lastChild
+- parentNode
+- attributes
+- innerHTML
+- outerHTML
+- textContent
 
-* getElementById
-* getElementsByClassName
-* getElementsByTagName
-* getElementsByName
+实现方法：
 
-##### Node
-
-Implemented properties
-
-* nodeType
-* nodeName
-* childNodes
-* firstChild
-* lastChild
-* parentNode
-* attributes
-* innerHTML
-* outerHTML
-* textContent
-
-Implemented methods
-
-* getAttribute
-* getElementById
-* getElementsByClassName
-* getElementsByTagName
-* getElementsByName
-
-Usage - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
-
-
-## contributing
-
-issues and pull requests are welcome!
+- getAttribute
+- getElementById
+- getElementsByClassName
+- getElementsByTagName
+- getElementsByName
