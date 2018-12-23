@@ -22,6 +22,21 @@ class Dom {
     return this.findByRegExp(this.rawHTML, reg, true);
   }
 
+  getElementsByName(name){
+    const selector = new RegExp('name=(\'|")' + name + '\\1');
+    return this.findByRegExp(this.rawHTML, selector);
+  }
+
+  getElementsByClassName(className) {
+    const selector = new RegExp('class=(\'|")(.*?\\s)?' + className + '(\\s.*?)?\\1');
+    return this.findByRegExp(this.rawHTML, selector);
+  }
+
+  getElementsByTagName(tagName) {
+    const selector = new RegExp('^<'+tagName, 'i');
+    return this.findByRegExp(this.rawHTML, selector);
+  }
+
   findByRegExp(html, reg, onlyFirst) {
     const tags = html.match(this.reg.tag);
     const result = [];
